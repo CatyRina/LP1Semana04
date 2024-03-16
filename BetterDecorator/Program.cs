@@ -37,14 +37,9 @@ namespace BetterDecorator
         /// Método que decora uma string padrão com um caractere especificado repetido um certo número de vezes de cada lado.
         /// </summary>
         /// <returns>A string padrão decorada.</returns>
-        private static string Decor(string v)
+        private static string Decor()
         {
             return Decor("Welcome to BetterDecorator!", '*', 5);
-        }
-
-        private static string Decor(string v1, char v2, int v3)
-        {
-            throw new NotImplementedException();
         }
 
         /// <summary>
