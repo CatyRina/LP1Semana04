@@ -14,18 +14,37 @@ namespace BetterDecorator
         /// <param name="args">Argumentos da linha de comando: [0] - texto, [1] - caractere, [2] - número de vezes.</param>
         static void Main(string[] args)
         {
-            if (args.Length < 3)
+            if (args.Length == 0)
+            {
+                Console.WriteLine(Decor());
+            }
+            else if (args.Length < 3)
             {
                 Console.WriteLine("Uso: dotnet run --project BetterDecorator \"texto\" \"caractere\" número");
-                return;
             }
+            else
+            {
+                string text = args[0];
+                char character = args[1][0];
+                int times = int.Parse(args[2]);
 
-            string text = args[0];
-            char character = args[1][0];
-            int times = int.Parse(args[2]);
+                string decoratedText = Decorate(text, character, times);
+                Console.WriteLine(decoratedText);
+            }
+        }
 
-            string decoratedText = Decorate(text, character, times);
-            Console.WriteLine(decoratedText);
+        /// <summary>
+        /// Método que decora uma string padrão com um caractere especificado repetido um certo número de vezes de cada lado.
+        /// </summary>
+        /// <returns>A string padrão decorada.</returns>
+        private static string Decor(string v)
+        {
+            return Decor("Welcome to BetterDecorator!", '*', 5);
+        }
+
+        private static string Decor(string v1, char v2, int v3)
+        {
+            throw new NotImplementedException();
         }
 
         /// <summary>
